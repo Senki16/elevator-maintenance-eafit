@@ -30,7 +30,7 @@ Universidad EAFIT — Mechanical Engineering
 ```
 Elevator_Maintenance_EAFIT/
 ├── 01_Presentation/
-│   ├── Elevator_Maintenance.pptx     original deck, 20 slides
+│   ├── Elevator_Maintenance.pptx     original deck, 19 slides
 │   └── Elevator_Maintenance.pdf      PDF export, for viewing without PowerPoint
 ├── 02_Analysis/
 │   ├── elevator_cost_analysis.py     brand scoring + 5-year cost model
@@ -63,9 +63,16 @@ interface** through which passengers request floors.
 ![Elevator functional structure](docs/images/functional_structure.png)
 
 The energy/signal/material flow through the system, drawn with the Pahl & Beitz
-function verbs (transform, store, increase or decrease, transport or stop).
-Flow labels: `EE` electrical energy, `FH` human force, `SSPPD` desired-floor
-sensor signal, `MAT` material to be transported, `SCP` door-closing signal.
+function symbols (transform, store, increase or decrease or separate or combine,
+transport or hold). Three lines are laid out separately: the **user control
+line** from the call button through the controller to the drive and door motors,
+the **material handling line** from the cab through the door motor and back
+through the controller to the drive, and the **door lock line** with its 10-second
+hold.
+
+Abbreviations: `EE` electrical energy, `FH` human force, `SSPPD` sensor signal at
+desired floor, `MAT` material to transport, `SCP` door-closing signal, `SPD` door
+position signal.
 
 ### Morphological matrix
 
@@ -86,14 +93,9 @@ safety systems, and exhaustive testing before commissioning.
 
 ### Safety features
 
-![Safety features](docs/images/safety_features.png)
-
 Safety brake (stops the car if the main system fails), automatic doors,
 emergency lighting and the alarm button that puts passengers in contact with
 maintenance staff.
-
-> These two slides are images embedded in the deck and are still in Spanish;
-> the rest of the presentation is in English.
 
 ---
 
