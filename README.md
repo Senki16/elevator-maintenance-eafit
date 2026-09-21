@@ -58,9 +58,18 @@ The control side is three parts: **sensors** (car position, passenger movement),
 the **controller** that turns sensor data into motion commands, and the **user
 interface** through which passengers request floors.
 
+### Layout
+
+![Hoistway, machine room and elevation layout](docs/images/slide06_layout.png)
+
+Layout of an in-line arrangement: hoistway plan with the car and door
+dimensions, machine room with the control and attachment panels and the
+owner-supplied power feeds, and the elevation showing pit depth, travel,
+overhead and total height.
+
 ### Functional structure (Pahl & Beitz)
 
-![Elevator functional structure](docs/images/functional_structure.png)
+![Elevator functional structure](docs/images/slide07_functional_structure.png)
 
 The energy/signal/material flow through the system, drawn with the Pahl & Beitz
 function symbols (transform, store, increase or decrease or separate or combine,
@@ -76,7 +85,7 @@ position signal.
 
 ### Morphological matrix
 
-![Morphological matrix](docs/images/morphological_matrix.png)
+![Morphological matrix](docs/images/slide08_morphological_matrix.png)
 
 Partial functions — power delivery, control, transmission, moving system, doors,
 energy supply, braking and the lifting mechanism — each with up to three
@@ -85,7 +94,7 @@ matrix (blue and orange).
 
 ### Installation and maintenance
 
-![Installation and maintenance sequence](docs/images/installation_and_maintenance.png)
+![Installation and maintenance sequence](docs/images/slide09_installation_and_maintenance.png)
 
 Four stages: planning the design around the building, excavating the shaft and
 installing the guide system, installing the car and wiring it to the control and
