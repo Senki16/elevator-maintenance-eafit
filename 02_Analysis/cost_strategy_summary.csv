@@ -1,0 +1,5 @@
+strategy,year0_outlay,annual_run_cost_after,cumulative_5y_cost,savings_vs_baseline_5y
+Baseline (no change),0.0,288.0,1440.0,0.0
+1) Adopt stricter foreign standard,0.0,316.8,1584.0,-144.0
+2) Modernize elevators,960.0,234.0,2130.0,-690.0
+3) Reduce elevator count,0.0,240.0,1200.0,240.0
