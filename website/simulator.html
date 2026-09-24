@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maintenance plans · LiftCare EAFIT</title>
+<meta name="description" content="Interactive simulation of elevator maintenance plans for Universidad EAFIT: 12-month schedule, fleet status, downtime and 5-year cost.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='2' width='18' height='20' rx='4' fill='%231d1d1f'/%3E%3Cpath d='M8.5 9.5 12 6l3.5 3.5z' fill='%23fff'/%3E%3Cpath d='M8.5 14.5 12 18l3.5-3.5z' fill='%230071e3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap wide">
+  <a class="brand" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="2" width="18" height="20" rx="4" fill="#1d1d1f"/><path d="M8.5 9.5 12 6l3.5 3.5z" fill="#fff"/><path d="M8.5 14.5 12 18l3.5-3.5z" fill="#0071e3"/></svg><span>LiftCare · EAFIT</span></a>
+  <nav><a href="index.html">Overview</a><a href="standards.html">Standards</a><a href="simulator.html" class="active">Maintenance plans</a><a class="pill" href="simulator.html">Try the simulator</a></nav>
+</div></header>
+<main>
+
+<section class="hero" style="padding-bottom:40px">
+  <div class="wrap">
+    <p class="eyebrow">Maintenance plan simulator</p>
+    <h1>See the plan<br>before you sign it.</h1>
+    <p class="lead">Pick a maintenance strategy and watch a year of work across the campus fleet: every visit, test and inspection, the failures it prevents and what it costs.</p>
+  </div>
+</section>
+<section class="alt" style="padding-top:56px">
+  <div class="wrap wide">
+    <div class="controls">
+      <div class="tabs" id="plan-tabs">
+        <button class="on" data-p="current">Current · NTC 5926-1</button>
+        <button data-p="strict">Stricter standard</button>
+        <button data-p="predictive">Predictive · modernised</button>
+        <button data-p="reduced">Reduced fleet</button>
+      </div>
+      <p class="plan-desc" id="plan-desc"></p>
+      <div class="ctl-row"><label>Elevators on campus <b id="n-val">12</b> <input type="range" id="n" min="6" max="20" value="12"></label></div>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="board">
+      <div class="panel">
+        <div class="panel-head"><h4>12-month maintenance calendar</h4>
+          <div class="play"><button id="play" aria-label="Play the year"><svg viewBox="0 0 24 24" fill="#fff" id="play-ic"><path d="M7 4v16l13-8z"/></svg></button><input type="range" id="month" min="0" max="11" value="0" aria-label="Month"><span class="m" id="month-l">January</span></div>
+        </div>
+        <div class="cal" id="cal"></div>
+        <div class="legend"><span><i class="chip k-prev"></i>Preventive visit</span><span><i class="chip k-safe"></i>Safety test</span><span><i class="chip k-insp"></i>Third-party inspection</span><span><i class="chip k-pred"></i>Predictive intervention</span><span><i class="chip k-rem"></i>Remote monitoring</span><span><i class="chip k-fail"></i>Expected failure</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h4>Fleet status · <span id="fleet-m">January</span></h4><span class="caption" id="fleet-sum"></span></div>
+        <div class="fleet" id="fleet"></div>
+        <ul class="tasks" id="tasks"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap wide">
+    <div class="center">
+      <p class="eyebrow">Five-year cost</p>
+      <h2>Three routes to spend less.</h2>
+      <p class="lead">The study's routes, run through its cost model. Move the assumptions and every plan, chart and number updates.</p>
+    </div>
+    <div class="grid2 mt">
+      <div class="panel" style="background:var(--bg2)"><div class="panel-head"><h4>Cumulative cost (millions of COP)</h4></div><svg id="cost-chart" viewBox="0 0 560 300" role="img" aria-label="Cumulative five-year cost by strategy"></svg><div class="legend" id="cost-legend"></div></div>
+      <div class="panel" style="background:var(--bg2)"><div class="panel-head"><h4>Five-year summary</h4></div>
+        <table class="t" id="cost-table"></table>
+        <p class="note" id="payback"></p>
+      </div>
+    </div>
+    <div class="panel mt" style="background:var(--bg2);margin-top:20px">
+      <h4>Assumptions</h4>
+      <div class="assump" id="assump"></div>
+    </div>
+    <p class="note"><b>Illustrative model.</b> The presentation contains no numeric cost or performance data. Every figure here is a placeholder from the repository's cost model (12 elevators, COP 18 M/yr maintenance and 6 M/yr energy per unit, COP 80 M modernisation per unit, 30% energy and 15% maintenance savings, +10% inspection cost for the stricter standard, 2 elevators removed). Maintenance cadences, failure rates and repair times are also assumptions for visualisation. Replace them with real contracts and quotes before drawing conclusions. Reducing the fleet also costs waiting time and accessibility, which the model does not price.</p>
+    <div class="next"><a href="standards.html">‹ Standards</a><a href="index.html">Overview ›</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap wide foot">
+  <div><strong>Elevator maintenance study — Universidad EAFIT, Mechanical Engineering.</strong><br>
+  Miguel Restrepo Carrasquilla · Samuel Tamayo · David Zuluaga Henao · Santiago Quintero Álvarez · Danilo Ocampo Vélez · Tomás Arroyave Loaiza.<br>
+  Brand names belong to their owners. Cost and maintenance figures in the simulator are illustrative placeholders, not EAFIT data.</div>
+  <div class="foot-links"><a href="https://github.com/Senki16/elevator-maintenance-eafit" target="_blank" rel="noopener">GitHub repository</a><a href="https://github.com/Senki16/elevator-maintenance-eafit/blob/main/01_Presentation/Elevator_Maintenance.pdf" target="_blank" rel="noopener">Presentation (PDF)</a><a href="https://github.com/Senki16/elevator-maintenance-eafit/blob/main/02_Analysis/elevator_cost_analysis.py" target="_blank" rel="noopener">Cost model (Python)</a></div>
+</div></footer>
+<script src="sim.js"></script>
+</body>
+</html>

@@ -5,7 +5,9 @@ works, which standards govern it in Colombia, which brands are installed on
 campus, and which routes could realistically reduce the cost of keeping them
 running.
 
-The deliverable is the presentation in `01_Presentation/`. The Python model in
+The deliverable is the presentation in `01_Presentation/`. A website with an
+interactive **maintenance-plan simulator** lives in `website/` (see
+[Website](#website-and-maintenance-plan-simulator)). The Python model in
 `02_Analysis/` was written afterwards to put numbers behind the three
 cost-reduction routes the deck proposes — see the warning in
 [Cost model](#cost-model-illustrative-numbers) before quoting any figure from it.
@@ -37,7 +39,11 @@ Elevator_Maintenance_EAFIT/
 │   ├── cost_strategy_summary.csv     model output
 │   ├── brand_comparison.png          model output
 │   └── cost_strategy_projection.png  model output
-├── docs/images/                      slide renders used in this README
+├── website/                          static site + maintenance-plan simulator
+│   ├── index.html / standards.html / simulator.html
+│   ├── styles.css, sim.js
+│   └── img/                          figures used by the site
+├── docs/images/                      slide renders and website screenshots
 └── README.md
 ```
 
@@ -196,6 +202,68 @@ is exactly the number to replace first with a vendor quote.
 Reducing the elevator count is also the one option whose real cost is not
 financial: it is paid in waiting time and accessibility, which this model does
 not capture at all.
+
+---
+
+## Website and maintenance-plan simulator
+
+The `website/` folder contains a static, Apple-style site that presents the
+proposal in English. It has no build step and needs no API keys. It has three pages:
+
+| Page | Content |
+|---|---|
+| **Overview** (`index.html`) | How an elevator works, the design figures (layout, functional structure, morphological matrix, installation) and the brand comparison |
+| **Standards** (`standards.html`) | NTC 5926-1 and NTC 4349, key definitions, scope exclusions, and the international references behind the "stricter standard" route |
+| **Maintenance plans** (`simulator.html`) | Interactive simulation of four maintenance regimes over 12 months, plus the five-year cost comparison |
+
+### Home
+
+![Website home](docs/images/website_home.jpg)
+
+### Elevator components
+
+![Components section](docs/images/website_components.jpg)
+
+### Standards
+
+![Standards page](docs/images/website_standards.jpg)
+
+The standards page summarises the Colombian framework (**NTC 5926-1**: safety
+and inspection requirements; **NTC 4349**: construction and installation). The
+international references (EN 81-20/50, EN 81-80, EN 13015, ASME A17.1,
+ISO 25745) are added as context for route 1. They are not part of the original deck.
+
+### Maintenance-plan simulator
+
+![Maintenance-plan simulator](docs/images/website_simulator.jpg)
+
+You pick one of four plans (**Current regime**, **Stricter foreign standard**,
+**Modernise / predictive** or **Reduce fleet**) and set the number of elevators.
+The simulator then lays out a 12-month calendar of preventive visits,
+inspections, safety tests, predictive interventions and expected failures. A
+play button steps through the year and updates the fleet status board and the
+monthly task list.
+
+### Five-year cost comparison
+
+![Five-year cost comparison](docs/images/website_costs.jpg)
+
+The cost panel mirrors `02_Analysis/elevator_cost_analysis.py`. It gives the
+same baseline (288 M COP/yr), the same strategy totals and the 17.8-year
+modernisation payback. Every assumption can be changed with a slider. The
+visit cadences and failure rates are **illustrative**, like the rest of the model.
+
+### Run locally / deploy
+
+```bash
+cd website
+python -m http.server 8000
+# http://localhost:8000
+```
+
+To deploy on Vercel, import the repo, set **Root Directory** to `website` and the
+Framework Preset to *Other*, then deploy. GitHub Pages also works if you publish
+`website/`.
 
 ---
 
