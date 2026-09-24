@@ -5,6 +5,10 @@ works, which standards govern it in Colombia, which brands are installed on
 campus, and which routes could realistically reduce the cost of keeping them
 running.
 
+**Live website:** [elevator-maintenance-eafit.vercel.app](https://elevator-maintenance-eafit.vercel.app) — includes the interactive
+[maintenance-plan simulator](https://elevator-maintenance-eafit.vercel.app/simulator.html)
+and the [standards](https://elevator-maintenance-eafit.vercel.app/standards.html) page.
+
 The deliverable is the presentation in `01_Presentation/`. A website with an
 interactive **maintenance-plan simulator** lives in `website/` (see
 [Website](#website-and-maintenance-plan-simulator)). The Python model in
@@ -252,6 +256,8 @@ The cost panel mirrors `02_Analysis/elevator_cost_analysis.py`. It gives the
 same baseline (288 M COP/yr), the same strategy totals and the 17.8-year
 modernisation payback. Every assumption can be changed with a slider. The
 visit cadences and failure rates are **illustrative**, like the rest of the model.
+
+Live at **https://elevator-maintenance-eafit.vercel.app**.
 
 ### Run locally / deploy
 

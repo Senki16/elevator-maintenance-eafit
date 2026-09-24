@@ -2,6 +2,8 @@
 
 Static website (no build step, no API keys) that presents the EAFIT elevator maintenance study in English.
 
+**Live:** https://elevator-maintenance-eafit.vercel.app
+
 | File | Content |
 |---|---|
 | `index.html` | Overview: elevator components, design figures, brand comparison |
